@@ -55,7 +55,6 @@ function hL (){
     else {
         feed.textContent = "Du har gættet for lavt";
     }
-
 }
 
 
