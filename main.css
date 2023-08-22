@@ -45,3 +45,23 @@
   .gone {
     display: none;
   }
+
+  #input {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  button {
+    background-color: transparent;
+    border: solid 1px #a600ff;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 1rem;
+  }
+
+  button:hover {
+    background-color: #a600ff;
+    transition: 0.2s;
+    color: white;
+  }

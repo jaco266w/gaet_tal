@@ -9,6 +9,8 @@ const antal = document.querySelector("#antal");
 const feed = document.querySelector("#feed");
 const reset = document.querySelector("#reset");
 const won = document.querySelector("#won");
+const snyd = document.querySelector("#snyd");
+const snydBox = document.querySelector("#snyd_box")
 
 let antalTal;
 let ranT;
@@ -23,9 +25,11 @@ function start() {
     antal.textContent = antalTal
     feed.textContent = "Klar til dit Gæt"
     won.classList.add("gone");
-    
+    snydBox.classList.add("gone");
+
     ranT = Math.floor(Math.random() * (max + 1));
-    console.log(ranT);
+
+    snyd.textContent = ranT;
 }
 
 function klik() {
@@ -41,6 +45,10 @@ function klik() {
             origin: {y: -0.1}
         })
     }
+    else if (gaet2 === 999) {
+        console.log("Du har snydt");
+        snydBox.classList = " ";
+    }
     else {
         antalTal ++;
         antal.textContent = antalTal
@@ -49,9 +57,13 @@ function klik() {
 }
 
 function hL (){
-    if (gaet.value > ranT) {
+   if (gaet.value > 100) {
+        feed.textContent = "Du har indtastet et tal uden for intervallet";
+    }
+    else if (gaet.value > ranT) {
         feed.textContent = "Du har gættet for højt";
     }
+   
     else {
         feed.textContent = "Du har gættet for lavt";
     }
